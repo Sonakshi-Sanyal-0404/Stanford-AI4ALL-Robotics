@@ -11,7 +11,7 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 planeId = p.loadURDF("plane.urdf")
 print("Loaded PyBullet plane.")
 
-crackebox = p.loadURDF("011_banana.urdf")
+crackerbox = p.loadURDF("ycb_assets/011_banana.urdf")
 
 while True:
     p.stepSimulation()
