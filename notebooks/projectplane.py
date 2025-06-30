@@ -12,7 +12,6 @@ planeId = p.loadURDF("plane.urdf")
 print("Loaded PyBullet plane.")
 
 crackebox = p.loadURDF("011_banana.urdf")
-
 while True:
     p.stepSimulation()
     time.sleep(0.01)
