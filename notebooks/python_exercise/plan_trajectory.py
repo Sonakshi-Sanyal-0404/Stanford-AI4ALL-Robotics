@@ -43,10 +43,6 @@ def linear_interpolation(start, goal, steps):
     return np.linspace(start, goal, steps)
 
 def plan_trajectory(start_angles, target_position, kuka_id):
-    kuka_id = p.loadURDF("kuka_iiwa/model.urdf", useFixedBase=True)
-    for i in range(7):
-        p.resetJointState(kuka_id, i, start_angles[i])
-
     goal_joint_angles = p.calculateInverseKinematics(kuka_id, 6, target_position)[:7]
     steps = 50
     trajectory = linear_interpolation(start_angles, goal_joint_angles, steps)
